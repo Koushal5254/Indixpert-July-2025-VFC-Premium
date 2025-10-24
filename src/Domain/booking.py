@@ -49,7 +49,7 @@ class Booking:
             with open(BOOKINGS_FILE, "r") as f:
                 bookings = json.load(f)
         except:
-            print("No bookings found.")
+            print("No bookings found..")
             return
 
         print("\n----- Bookings -----")

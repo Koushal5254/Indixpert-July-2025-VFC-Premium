@@ -57,7 +57,7 @@ class Menu:
             with open(MENU_FILE, "r") as f:
                 items = json.load(f)
         except:
-            print(" Menu file missing.")
+            print(" Menu file missing..")
             return
 
         for item in items:

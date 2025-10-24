@@ -2,6 +2,7 @@ import json, os
 from getpass import getpass
 from Model.user_model import UserModel
 from Validation.validators import Validator
+from Logs.logs import Logger
 
 BASE_PATH = os.getcwd()
 USERS_FILE = os.path.join(BASE_PATH, "Database", "users.json")
@@ -15,7 +16,8 @@ class Auth:
     def sign_up(self):
         role = input("Role (staff only): ").lower()
         if role != "staff":
-            print("Only staff can sign up. Admin is predefined.")
+            print(" Only staff can sign up.")
+            Logger.write_log("Unauthorized sign-up attempt", actor="unknown", details=f"Role: {role}")
             return
 
         name = input("Name: ")
@@ -26,7 +28,8 @@ class Auth:
 
         if not (Validator.is_valid_name(name) and Validator.is_valid_email(email) and
                 Validator.is_valid_mobile(mobile) and Validator.is_valid_password(password)):
-            print("Invalid input.")
+            print(" Invalid input.")
+            Logger.write_log("Sign-up failed", actor="staff", details=f"Email: {email}")
             return
 
         try:
@@ -36,36 +39,40 @@ class Auth:
             users = []
 
         if any(u["email"] == email for u in users):
-            print("Email already registered.")
+            print(" Email already registered.")
+            Logger.write_log("Duplicate sign-up attempt", actor="staff", details=f"Email: {email}")
             return
 
         user = UserModel(email, name, mobile, exp, "staff", password)
         users.append(user.to_dict())
         with open(USERS_FILE, "w") as f:
             json.dump(users, f, indent=4)
-        print("Staff sign-up successful.")
+        print(" Staff sign-up successful.")
+        Logger.write_log("Staff signed up", actor="staff", details=f"Email: {email}")
 
     def sign_in(self):
         email = input("Email: ")
         password = getpass("Password: ")
 
-        # Check admin credentials
         if email == self.admin_email and password == self.admin_password:
-            print(f"----- Welcome To VFC Premium -----")
+            print(f" Welcome {self.admin_name} (admin)")
+            Logger.write_log("Admin signed in", actor="admin", details=f"Email: {email}")
             return "admin"
 
-        # Check staff credentials
         try:
             with open(USERS_FILE, "r") as f:
                 users = json.load(f)
         except:
-            print("No users found.")
+            print(" No users found.")
+            Logger.write_log("Sign-in failed", actor="staff", details="User file missing")
             return None
 
         for u in users:
             if u["email"] == email and u["password"] == password:
-                print(f"Welcome {u['name']} ({u['role']})")
+                print(f" Welcome {u['name']} ({u['role']})")
+                Logger.write_log("Staff signed in", actor="staff", details=f"Email: {email}")
                 return u["role"]
 
-        print("Invalid credentials.")
+        print(" Invalid credentials.")
+        Logger.write_log("Sign-in failed", actor="staff", details=f"Email: {email}")
         return None
