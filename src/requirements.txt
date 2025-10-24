@@ -1,7 +1,7 @@
 
 ---
 
-## 📄 `requirements.txt`
+##  `requirements.txt`
 
 ```txt
 # No external dependencies required
