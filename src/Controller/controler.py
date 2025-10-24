@@ -9,7 +9,7 @@ class AppController:
 
     def run(self):
         while True:
-            print("\n----- Welcome To VFC Premium -----")
+            print("\n------ Welcome To VFC Premium ------")
             print("1. Sign Up")
             print("2. Sign In")
             print("3. View Menu")

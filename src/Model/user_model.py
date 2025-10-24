@@ -1,9 +1,9 @@
 class UserModel:
-    def __init__(self, email, name, mobile, experience, role, password):
+    def __init__(self, email, name, mobile, experiencee, role, password):
         self.email = email
         self.name = name
         self.mobile = mobile
-        self.experience = experience
+        self.experience = experiencee
         self.role = role
         self.password = password
 

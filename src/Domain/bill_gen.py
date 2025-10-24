@@ -1,12 +1,13 @@
 import json, os
 from datetime import datetime
+from Logs.logs import Logger
 
 BASE_PATH = os.getcwd()
 ORDERS_FILE = os.path.join(BASE_PATH, "Database", "orders.json")
 MENU_FILE = os.path.join(BASE_PATH, "Database", "menu.json")
 BILLS_FILE = os.path.join(BASE_PATH, "Database", "bills.json")
 
-class Bill:
+class BillGenerator:
     def generate_bill(self):
         table = input("Enter table number to bill: ")
 
@@ -17,17 +18,19 @@ class Bill:
                 menu_raw = json.load(f)
         except:
             print(" Required files missing.")
+            Logger.write_log("Bill generation failed", actor="admin", details="Missing order/menu files")
             return
 
         order = next((o for o in orders if o["table"] == table), None)
         if not order:
             print(" No order found for this table.")
+            Logger.write_log("Bill generation failed", actor="admin", details=f"Table: {table} not found")
             return
 
         total = 0
         print("\n ---------- VFC Premium Invoice ----------")
-        print(f" Date: {datetime.now().strftime('%d-%m-%Y %I:%M %p')}")
-        print(f" Table No: {table}")
+        print(f"🕒 Date: {datetime.now().strftime('%d-%m-%Y %I:%M %p')}")
+        print(f"🪑 Table No: {table}")
         print("--------------------------------------------")
         print("Item Name                Price (₹)")
         print("--------------------------------------------")
@@ -39,8 +42,9 @@ class Bill:
                 total += item["price"]
             else:
                 print(f"{code:<25}  Not found")
+                Logger.write_log("Missing menu item during billing", actor="admin", details=f"Code: {code}")
 
-        gst = round(total * 0.05, 2)  # 5% GST
+        gst = round(total * 0.05, 2)
         grand_total = total + gst
 
         print("--------------------------------------------")
@@ -70,3 +74,4 @@ class Bill:
         with open(BILLS_FILE, "w") as f:
             json.dump(bills, f, indent=4)
         print(" Bill generated successfully.")
+        Logger.write_log("Bill generated", actor="admin", details=f"Table: {table}, Total: ₹{grand_total}")

@@ -46,7 +46,7 @@
   { "code": "V407", "name": "Filter Coffee", "category": "Beverages", "price": 60 },
   { "code": "V408", "name": "Strawberry Shake", "category": "Beverages", "price": 70 },
   { "code": "V409", "name": "Masala Soda", "category": "Beverages", "price": 40 },
-  { "code": "V410", "name": "Iced Tea(Lemon/Mint)", "category": "Beverages", "price": 60 },
+  { "code": "V410", "name": "Iced Tea(Lemon/Mint)", "category": "Beverages", "price": 70 },
 
   { "code": "S501", "name": "Paneer Tikka", "category": "Starters", "price": 150 },
   { "code": "S502", "name": "Corn Cheese Balls", "category": "Starters", "price": 130 },

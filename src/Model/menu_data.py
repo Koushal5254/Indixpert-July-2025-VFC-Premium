@@ -1,9 +1,9 @@
 class MenuItem:
-    def __init__(self, code, name, category, price):
+    def __init__(self, code, name, category, pricee):
         self.code = code
         self.name = name
         self.category = category
-        self.price = price
+        self.price = pricee
 
     def to_dict(self):
         return {
