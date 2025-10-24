@@ -1,0 +1,24 @@
+[
+    {
+        "booking_id": "BK04E3AD",
+        "name": "koushal",
+        "email": "komal121@gmail.com",
+        "mobile": "8756837576",
+        "date": "2025-10-23",
+        "time": "13:26",
+        "guests": 10,
+        "table_no": "T1",
+        "status": "Confirmed"
+    },
+    {
+        "booking_id": "BK9D7752",
+        "name": "vishal",
+        "email": "vishal@321gmail.com",
+        "mobile": "8696861016",
+        "date": "2025-10-23",
+        "time": "15:00",
+        "guests": 4,
+        "table_no": "T2",
+        "status": "Confirmed"
+    }
+]
