@@ -12,7 +12,8 @@ class MenuItem:
             "category": self.category,
             "price": self.price
         }
-
+    
+    #To get the data
     @staticmethod
     def from_dict(data):
         return MenuItem(

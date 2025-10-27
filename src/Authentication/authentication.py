@@ -11,7 +11,7 @@ class Auth:
     def __init__(self):
         self.admin_email = "admin@VFCPremium.com"
         self.admin_password = "Admin@123"
-        self.admin_name = "Admin"
+        self.admin_name = "Admin12"
 
     def sign_up(self):
         role = input("Role (staff only): ").lower()

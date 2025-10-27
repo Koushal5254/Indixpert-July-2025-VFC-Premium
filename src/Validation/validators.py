@@ -4,7 +4,7 @@ from datetime import datetime
 class Validator:
     @staticmethod
     def is_valid_email(email):
-        return "@" in email and "." in email and len(email) >= 7
+        return "@" in email and "." in email and len(email) >= 6
 
     @staticmethod
     def is_valid_mobile(mobile):

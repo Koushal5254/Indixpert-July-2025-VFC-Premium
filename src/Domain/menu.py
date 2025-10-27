@@ -11,7 +11,7 @@ class Menu:
                 raw_items = json.load(f)
                 return [MenuItem.from_dict(item) for item in raw_items]
         except:
-            print(" Menu file missing or corrupted.")
+            print(" Menu file missing or corrupted..")
             return []
 
     def show_menu(self):

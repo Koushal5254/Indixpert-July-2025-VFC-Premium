@@ -73,5 +73,5 @@ class BillGenerator:
         bills.append(bill)
         with open(BILLS_FILE, "w") as f:
             json.dump(bills, f, indent=4)
-        print(" Bill generated successfully.")
+        print(" Bill generated successfully..")
         Logger.write_log("Bill generated", actor="admin", details=f"Table: {table}, Total: ₹{grand_total}")
