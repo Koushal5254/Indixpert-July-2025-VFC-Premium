@@ -14,7 +14,7 @@ class AppController:
             print("2. Sign In")
             print("3. View Menu")
             print("4. Exit")
-            choice = input("Enter your choice : ")
+            choice = input("Enter your choice(1-4) : ")
 
             if choice == '1':
                 self.auth.sign_up()

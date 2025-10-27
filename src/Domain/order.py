@@ -7,7 +7,7 @@ ORDERS_FILE = os.path.join(BASE_PATH, "Database", "orders.json")
 
 class OrderOps:
     def place_order(self):
-        table = input("Enter table number: ")
+        table = input("Enter table number : ")
         codes = input("Enter item codes (comma-separated): ").split(',')
 
         menu_items = Menu().load_menu()

@@ -29,4 +29,4 @@ class Logger:
                 for line in lines[-limit:]:
                     print(line.strip())
         except FileNotFoundError:
-            print(" No logs found.")
+            print(" No logs found..")

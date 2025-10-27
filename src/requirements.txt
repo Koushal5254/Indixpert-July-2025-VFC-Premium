@@ -5,7 +5,7 @@
 
 ```txt
 # No external dependencies required
-# Built entirely with Python standard libraries:
+# Built entirely with Python standard libraries :
 # json, os, uuid, datetime, getpass, re
 
 

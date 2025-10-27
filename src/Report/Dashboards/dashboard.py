@@ -50,4 +50,4 @@ class Dashboard:
                 print(" Logging out...")
                 break
             else:
-                print(" Invalid choice.. Please try again.")
+                print(" Invalid choice.. Please try again..")

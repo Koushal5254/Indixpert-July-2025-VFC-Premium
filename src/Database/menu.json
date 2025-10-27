@@ -21,7 +21,7 @@
   { "code": "B207", "name": "Paneer Paratha", "category": "Breads", "price": 55 },
   { "code": "B208", "name": "Stuffed Kulcha (Paneer)", "category": "Breads", "price": 60 },
   { "code": "B209", "name": "Bajra Roti", "category": "Breads", "price": 25 },
-  { "code": "B210", "name": "Naan With Stuffed Cheese", "category": "Breads", "price": 60 },
+  { "code": "B210", "name": "Naan With Stuffed Cheese", "category": "Breads", "price": 70 },
   { "code": "B211", "name": "Amritsari Kulcha", "category": "Breads", "price": 65 },
 
   { "code": "D301", "name": "Gulab Jamun", "category": "Desserts", "price": 60 },

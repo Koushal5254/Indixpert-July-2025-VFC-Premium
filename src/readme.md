@@ -4,7 +4,7 @@ A modular, menu-driven Python application for managing restaurant operations —
 
 ## Features
 
-- Staff Sign-Up and Sign-In
+- Staff Sign-Up and Sign-In.
 - Admin Login (preloaded)
 - Menu Display (from JSON)
 - Order Placement, Update, Cancel

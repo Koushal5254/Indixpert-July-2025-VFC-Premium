@@ -17,6 +17,7 @@ class UserModel:
             "password": self.password
         }
 
+    #To get the data
     @staticmethod
     def from_dict(data):
         return UserModel(
