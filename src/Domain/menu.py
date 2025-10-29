@@ -1,77 +1,121 @@
 import json, os
-from Model.menu_data import MenuItem
+from Validation.validators import Validator
+from Logs.logs import Logger
 
 BASE_PATH = os.getcwd()
 MENU_FILE = os.path.join(BASE_PATH, "Database", "menu.json")
 
+# Ensure menu file exists
+os.makedirs(os.path.dirname(MENU_FILE), exist_ok=True)
+if not os.path.exists(MENU_FILE):
+    with open(MENU_FILE, "w", encoding="utf-8") as f:
+        json.dump([], f)
+
 class Menu:
-    def load_menu(self):
+    def display_menu(self):
         try:
-            with open(MENU_FILE, "r") as f:
-                raw_items = json.load(f)
-                return [MenuItem.from_dict(item) for item in raw_items]
+            with open(MENU_FILE, "r", encoding="utf-8") as f:
+                menu = json.load(f)
         except:
-            print(" Menu file missing or corrupted..")
-            return []
-
-    def show_menu(self):
-        items = self.load_menu()
-        print("\n ----- VFC PREMIUM MENU -----")
-        categories = sorted(set(item.category for item in items))
-        for cat in categories:
-            print(f"\n- {cat}")
-            for item in items:
-                if item.category == cat:
-                    print(f"  {item.code} - {item.name} : ₹{item.price}")
-
-    def add_item(self, role):
-        if role != "admin":
-            print(" Access denied. Only admin can add items.")
+            print(" Menu file missing or unreadable. ")
             return
 
-        code = input("Enter item code: ")
-        name = input("Enter item name: ")
-        category = input("Enter category: ")
-        price = float(input("Enter price: "))
-
-        new_item = MenuItem(code, name, category, price).to_dict()
-
-        try:
-            with open(MENU_FILE, "r") as f:
-                items = json.load(f)
-        except:
-            items = []
-
-        items.append(new_item)
-        with open(MENU_FILE, "w") as f:
-            json.dump(items, f, indent=4)
-        print(" Item added successfully.")
-
-    def update_item(self, role):
-        if role != "admin":
-            print(" Access denied. Only admin can update items.")
+        if not menu:
+            print(" Menu is currently empty. ")
             return
 
-        code = input("Enter item code to update: ")
-        try:
-            with open(MENU_FILE, "r") as f:
-                items = json.load(f)
-        except:
-            print(" Menu file missing..")
-            return
+        print("\n VFC Premium Menu ")
+        print("-" * 40)
+        for item in menu:
+            print(f"{item['code']} | {item['name']} | ₹{item['price']} | {item['category']}")
+        print("-" * 40)
 
-        for item in items:
-            if item["code"] == code:
-                print(f"Current name: {item['name']}, price: ₹{item['price']}")
-                item["name"] = input("New name: ") or item["name"]
-                item["category"] = input("New category: ") or item["category"]
-                new_price = input("New price: ")
-                item["price"] = float(new_price) if new_price else item["price"]
+    def admin_menu_ops(self):
+        while True:
+            print("\n Admin Menu Options ")
+            print("1. Add New Item")
+            print("2. Update Existing Item")
+            print("3. Back")
+            choice = input("Enter choice: ").strip()
+
+            if choice == '1':
+                self.add_item()
+            elif choice == '2':
+                self.update_item()
+            elif choice == '3':
                 break
-        else:
-            print(" Item not found.")
+            else:
+                print(" Invalid choice. ")
+
+    def add_item(self):
+        code = input("Enter item code (e.g., M01): ").strip().upper()
+        name = input("Enter item name: ").strip()
+        price = input("Enter price (₹): ").strip()
+        category = input("Enter category (Starter/Main/Dessert/Drink): ").strip().capitalize()
+
+        if not Validator.is_valid_code(code) or not Validator.is_valid_name(name) or not Validator.is_valid_price(price):
+            print(" Invalid item details. ")
             return
 
-        with open(MENU_FILE, "w") as f:
-            json.dump(items, f, indent=4)
-        print(" Item updated successfully.")
+        try:
+            with open(MENU_FILE, "r", encoding="utf-8") as f:
+                menu = json.load(f)
+        except:
+            menu = []
+
+        if any(item["code"] == code for item in menu):
+            print(" Item code already exists. ")
+            return
+
+        new_item = {
+            "code": code,
+            "name": name,
+            "price": float(price),
+            "category": category
+        }
+
+        menu.append(new_item)
+        with open(MENU_FILE, "w", encoding="utf-8") as f:
+            json.dump(menu, f, indent=4)
+
+        print(" Item added to menu. ")
+        Logger.write_log("Menu item added", actor="admin", details=f"{code} | {name} | ₹{price} | {category}")
+
+    def update_item(self):
+        code = input("Enter item code to update: ").strip().upper()
+
+        try:
+            with open(MENU_FILE, "r", encoding="utf-8") as f:
+                menu = json.load(f)
+        except:
+            print(" Menu file missing. ")
+            return
+
+        item = next((i for i in menu if i["code"] == code), None)
+        if not item:
+            print(" Item not found. ")
+            return
+
+        print(f"Current: {item['name']} | ₹{item['price']} | {item['category']}")
+        name = input("New name (leave blank to keep): ").strip()
+        price = input("New price (leave blank to keep): ").strip()
+        category = input("New category (leave blank to keep): ").strip().capitalize()
+
+        if name:
+            if not Validator.is_valid_name(name):
+                print(" Invalid name. ")
+                return
+            item["name"] = name
+        if price:
+            if not Validator.is_valid_price(price):
+                print(" Invalid price. ")
+                return
+            item["price"] = float(price)
+        if category:
+            item["category"] = category
+
+        with open(MENU_FILE, "w", encoding="utf-8") as f:
+            json.dump(menu, f, indent=4)
+
+        print(" Item updated. ")
+        Logger.write_log("Menu item updated", actor="admin", details=f"{code} | {item['name']} | ₹{item['price']} | {item['category']}")

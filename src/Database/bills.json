@@ -16,5 +16,165 @@
             "M106"
         ],
         "total": 590
+    },
+    {
+        "table": "T2",
+        "items": [
+            "M101"
+        ],
+        "subtotal": 250,
+        "gst": 12.5,
+        "total": 262.5,
+        "timestamp": "2025-10-27 21:47:42"
+    },
+    {
+        "table": "T1",
+        "items": [
+            "M107",
+            "M104"
+        ],
+        "subtotal": 390,
+        "gst": 19.5,
+        "total": 409.5,
+        "timestamp": "2025-10-28 13:13:57"
+    },
+    {
+        "table": "T2",
+        "items": [
+            "M101"
+        ],
+        "subtotal": 250,
+        "gst": 12.5,
+        "total": 262.5,
+        "timestamp": "2025-10-28 13:14:10"
+    },
+    {
+        "table": "T3",
+        "items": [
+            "M101",
+            "D301",
+            "V401",
+            "B201"
+        ],
+        "subtotal": 380,
+        "gst": 19.0,
+        "total": 399.0,
+        "timestamp": "2025-10-28 13:14:23"
+    },
+    {
+        "table": "T1",
+        "items": [
+            "M107",
+            "M104"
+        ],
+        "subtotal": 390,
+        "gst": 19.5,
+        "total": 409.5,
+        "timestamp": "2025-10-28 13:40:20"
+    },
+    {
+        "table": "T5",
+        "items": [
+            "M101",
+            "M102"
+        ],
+        "subtotal": 430,
+        "gst": 21.5,
+        "total": 451.5,
+        "timestamp": "2025-10-28 18:27:12"
+    },
+    {
+        "table": "T3",
+        "items": [
+            "M101",
+            "D301",
+            "V401",
+            "B201"
+        ],
+        "subtotal": 380,
+        "gst": 19.0,
+        "total": 399.0,
+        "timestamp": "2025-10-28 18:34:40"
+    },
+    {
+        "table": "T3",
+        "items": [
+            "M101",
+            "D301",
+            "V401",
+            "B201"
+        ],
+        "subtotal": 380,
+        "gst": 19.0,
+        "total": 399.0,
+        "timestamp": "2025-10-28 18:38:48"
+    },
+    {
+        "bill_id": "BILL011",
+        "table": "T3",
+        "customer_name": "Unknown",
+        "customer_mobile": "Unknown",
+        "guests": 0,
+        "items": [
+            {
+                "code": "M101",
+                "name": "Paneer Butter Masala",
+                "quantity": 1,
+                "unit_price": 250,
+                "total_price": 250
+            },
+            {
+                "code": "D301",
+                "name": "Gulab Jamun",
+                "quantity": 1,
+                "unit_price": 60,
+                "total_price": 60
+            },
+            {
+                "code": "V401",
+                "name": "Masala Chai",
+                "quantity": 1,
+                "unit_price": 30,
+                "total_price": 30
+            },
+            {
+                "code": "B201",
+                "name": "Butter Naan",
+                "quantity": 1,
+                "unit_price": 40,
+                "total_price": 40
+            }
+        ],
+        "subtotal": 380,
+        "gst": 19.0,
+        "total": 399.0,
+        "timestamp": "2025-10-28 18:40:33"
+    },
+    {
+        "bill_id": "BILL012",
+        "table": "T4",
+        "customer_name": "manvendra",
+        "customer_mobile": "8979806970",
+        "guests": 9,
+        "items": [
+            {
+                "code": "M101",
+                "name": "Paneer Butter Masala",
+                "quantity": 1,
+                "unit_price": 250,
+                "total_price": 250
+            },
+            {
+                "code": "S501",
+                "name": "Paneer Tikka",
+                "quantity": 1,
+                "unit_price": 150,
+                "total_price": 150
+            }
+        ],
+        "subtotal": 400,
+        "gst": 20.0,
+        "total": 420.0,
+        "timestamp": "2025-10-28 18:46:55"
     }
 ]

@@ -3,31 +3,27 @@ from Report.Dashboards.dashboard import Dashboard
 from Domain.menu import Menu
 
 class AppController:
-    def __init__(self):
-        self.auth = Auth()
-        self.menu = Menu()
-
     def run(self):
         while True:
-            print("\n------ Welcome To VFC Premium ------")
+            print("\n Welcome to VFC Premium ")
             print("1. Sign Up")
             print("2. Sign In")
             print("3. View Menu")
             print("4. Exit")
-            choice = input("Enter your choice(1-4) : ")
+
+            choice = input("Enter your choice: ")
+            auth = Auth()
 
             if choice == '1':
-                self.auth.sign_up()
+                auth.sign_up()
             elif choice == '2':
-                role = self.auth.sign_in()
-                if role in ["admin", "staff"]:
-                    Dashboard(role).run()
-                else:
-                    print("Access denied.")
+                role = auth.sign_in()
+                if role:
+                    Dashboard(role).show()
             elif choice == '3':
-                self.menu.show_menu()
+                Menu().display_menu()
             elif choice == '4':
-                print("Exiting.. Have a great day!")
+                print(" Thank you for visiting at VFC Premium! ")
                 break
             else:
-                print("Invalid choice. Please try again.")
+                print(" Invalid choice. ")

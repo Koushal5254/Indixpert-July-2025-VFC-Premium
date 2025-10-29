@@ -9,9 +9,9 @@ USERS_FILE = os.path.join(BASE_PATH, "Database", "users.json")
 
 class Auth:
     def __init__(self):
-        self.admin_email = "admin@VFCPremium.com"
-        self.admin_password = "Admin@123"
-        self.admin_name = "Admin12"
+        self.admin_email = "admin@vfcpremium.com"
+        self.admin_password = "VFCadmin@123"
+        self.admin_name = "VFC Premium Admin"
 
     def sign_up(self):
         role = input("Role (staff only): ").lower()
@@ -20,11 +20,11 @@ class Auth:
             Logger.write_log("Unauthorized sign-up attempt", actor="unknown", details=f"Role: {role}")
             return
 
-        name = input("Name: ")
-        email = input("Email: ")
-        mobile = input("Mobile: ")
-        exp = input("Experience: ")
-        password = getpass("Password: ")
+        name = input("Enter Name: ")
+        email = input("Enter Email: ")
+        mobile = input("Enter Mobile: ")
+        exp = input("Enter Experience: ")
+        password = getpass("Enter Password: ")
 
         if not (Validator.is_valid_name(name) and Validator.is_valid_email(email) and
                 Validator.is_valid_mobile(mobile) and Validator.is_valid_password(password)):
@@ -39,7 +39,7 @@ class Auth:
             users = []
 
         if any(u["email"] == email for u in users):
-            print(" Email already registered.")
+            print(" Email already registered. ")
             Logger.write_log("Duplicate sign-up attempt", actor="staff", details=f"Email: {email}")
             return
 
@@ -47,7 +47,7 @@ class Auth:
         users.append(user.to_dict())
         with open(USERS_FILE, "w") as f:
             json.dump(users, f, indent=4)
-        print(" Staff sign-up successful.")
+        print(" Welcome to VFC Premium! Staff sign-up successful. ")
         Logger.write_log("Staff signed up", actor="staff", details=f"Email: {email}")
 
     def sign_in(self):
@@ -69,10 +69,10 @@ class Auth:
 
         for u in users:
             if u["email"] == email and u["password"] == password:
-                print(f" Welcome {u['name']} ({u['role']})")
+                print(f" Welcome {u['name']} ({u['role']}) to VFC Premium")
                 Logger.write_log("Staff signed in", actor="staff", details=f"Email: {email}")
                 return u["role"]
 
-        print(" Invalid credentials.")
+        print(" Invalid credentials. ")
         Logger.write_log("Sign-in failed", actor="staff", details=f"Email: {email}")
         return None

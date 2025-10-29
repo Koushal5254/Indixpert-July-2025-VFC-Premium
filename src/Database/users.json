@@ -1,10 +1,26 @@
 [
     {
-        "email": "kaushu1109@gmail.com",
-        "name": "koushal",
-        "mobile": "9354676543",
-        "experience": "4",
+        "email": "admin@vfcpremium.com",
+        "name": "VFC Premium Admin",
+        "mobile": "9999999999",
+        "experience": "10",
+        "role": "admin",
+        "password": "VFCadmin@123"
+    },
+    {
+        "email": "staff1@vfcpremium.com",
+        "name": "Priya Sharma",
+        "mobile": "9876543210",
+        "experience": "2",
         "role": "staff",
-        "password": "K#1jhk"
+        "password": "Priya@123"
+    },
+    {
+        "email": "kaushu234@gmail.com",
+        "name": "koushal",
+        "mobile": "9867568790",
+        "experience": "5",
+        "role": "staff",
+        "password": "Koushal@059"
     }
 ]
