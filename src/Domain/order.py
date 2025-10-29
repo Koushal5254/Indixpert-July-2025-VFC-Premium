@@ -1,15 +1,21 @@
 import json, os
+from datetime import datetime
 from Domain.menu import Menu
 from Logs.logs import Logger
 
 BASE_PATH = os.getcwd()
 ORDERS_FILE = os.path.join(BASE_PATH, "Database", "orders.json")
+VALID_TABLES = [f"T{i}" for i in range(1, 11)]  # T1 to T10
 
 class OrderOps:
     def place_order(self):
-        table = input("Enter table number : ")
-        codes = input("Enter item codes (comma-separated): ").split(',')
+        table = input("Enter table number (T1-T10): ").strip().upper()
+        if table not in VALID_TABLES:
+            print(" Invalid table. Choose from T1 to T10. ")
+            Logger.write_log("Invalid table order", actor="staff", details=f"Table: {table}")
+            return
 
+        codes = input("Enter item codes (comma-separated): ").split(',')
         menu_items = Menu().load_menu()
         selected_items = []
 
@@ -23,13 +29,14 @@ class OrderOps:
                 Logger.write_log("Invalid item code during order", actor="staff", details=f"Code: {code}")
 
         if not selected_items:
-            print(" No valid items selected.")
+            print(" No valid items selected. ")
             Logger.write_log("Order failed", actor="staff", details=f"Table: {table}")
             return
 
         order = {
-            "table": table.strip(),
-            "items": selected_items
+            "table": table,
+            "items": selected_items,
+            "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
 
         try:
@@ -41,16 +48,20 @@ class OrderOps:
         orders.append(order)
         with open(ORDERS_FILE, "w") as f:
             json.dump(orders, f, indent=4)
-        print(" Order placed successfully.")
+        print(" Order placed successfully at VFC Premium. ")
         Logger.write_log("Order placed", actor="staff", details=f"Table: {table}, Items: {', '.join(selected_items)}")
 
     def update_or_cancel_order(self):
-        table = input("Enter table number to update/cancel: ")
+        table = input("Enter table number to update/cancel (T1-T10): ").strip().upper()
+        if table not in VALID_TABLES:
+            print(" Invalid table. Choose from T1 to T10. ")
+            return
+
         try:
             with open(ORDERS_FILE, "r") as f:
                 orders = json.load(f)
         except:
-            print(" No orders found.")
+            print(" No orders found. ")
             Logger.write_log("Order update failed", actor="admin", details="Order file missing")
             return
 
@@ -62,17 +73,17 @@ class OrderOps:
                 if choice == '1':
                     new_codes = input("Enter new item codes (comma-separated): ").split(',')
                     order["items"] = [code.strip() for code in new_codes]
-                    print(" Order updated.")
+                    print(" Order updated. ")
                     Logger.write_log("Order updated", actor="admin", details=f"Table: {table}, New Items: {', '.join(order['items'])}")
                 elif choice == '2':
                     orders.remove(order)
-                    print(" Order cancelled.")
+                    print(" Order cancelled. ")
                     Logger.write_log("Order cancelled", actor="admin", details=f"Table: {table}")
                 else:
-                    print(" Invalid choice.")
+                    print(" Invalid choice. ")
                 break
         else:
-            print(" Order not found.")
+            print(" Order not found. ")
             Logger.write_log("Order not found", actor="admin", details=f"Table: {table}")
 
         with open(ORDERS_FILE, "w") as f:

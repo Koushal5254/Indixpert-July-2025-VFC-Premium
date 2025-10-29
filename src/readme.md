@@ -21,8 +21,8 @@ src/ ├── main.py ├── Authentication/ │   └── auth_ops.py ├
 
 ## Admin Credentials
 
-- **Email**: `admin@restaurant.com`
-- **Password**: `Admin123`
+- **Email**: `admin@vfcpremium.com`
+- **Password**: `VFCadmin@123`
 
 ## How to Run
 

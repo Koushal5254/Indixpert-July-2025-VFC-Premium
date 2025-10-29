@@ -1,61 +1,332 @@
 [
-  { "code": "M101", "name": "Paneer Butter Masala", "category": "Main Course", "price": 250 },
-  { "code": "M102", "name": "Dal Makhani", "category": "Main Course", "price": 180 },
-  { "code": "M103", "name": "Veg Biryani", "category": "Main Course", "price": 220 },
-  { "code": "M104", "name": "Chole Bhature", "category": "Main Course", "price": 160 },
-  { "code": "M105", "name": "Kadhai Mushroom", "category": "Main Course", "price": 240 },
-  { "code": "M106", "name": "Malai Kofta", "category": "Main Course", "price": 260 },
-  { "code": "M107", "name": "Kaju Curry", "category": "Main Course", "price": 230 },
-  { "code": "M108", "name": "Bhindi Masala", "category": "Main Course", "price": 170 },
-  { "code": "M109", "name": "Kadhai Paneer", "category": "Main Course", "price": 230 },
-  { "code": "M110", "name": "Haandi Paneer", "category": "Main Course", "price": 290 },
-  { "code": "M111", "name": "Rajma Chawal", "category": "Main Course", "price": 170 },
-  { "code": "M112", "name": "VFC Premium Special(Veg)", "category": "Main Course", "price": 290 },
-
-  { "code": "B201", "name": "Butter Naan", "category": "Breads", "price": 40 },
-  { "code": "B202", "name": "Garlic Naan", "category": "Breads", "price": 50 },
-  { "code": "B203", "name": "Tandoori Roti", "category": "Breads", "price": 30 },
-  { "code": "B204", "name": "Lachha Paratha", "category": "Breads", "price": 45 },
-  { "code": "B205", "name": "Plain Naan", "category": "Breads", "price": 35 },
-  { "code": "B206", "name": "Aloo Paratha", "category": "Breads", "price": 45 },
-  { "code": "B207", "name": "Paneer Paratha", "category": "Breads", "price": 55 },
-  { "code": "B208", "name": "Stuffed Kulcha (Paneer)", "category": "Breads", "price": 60 },
-  { "code": "B209", "name": "Bajra Roti", "category": "Breads", "price": 25 },
-  { "code": "B210", "name": "Naan With Stuffed Cheese", "category": "Breads", "price": 70 },
-  { "code": "B211", "name": "Amritsari Kulcha", "category": "Breads", "price": 65 },
-
-  { "code": "D301", "name": "Gulab Jamun", "category": "Desserts", "price": 60 },
-  { "code": "D302", "name": "Rasgulla", "category": "Desserts", "price": 55 },
-  { "code": "D303", "name": "Ice Cream (Vanilla)", "category": "Desserts", "price": 70 },
-  { "code": "D304", "name": "Brownie", "category": "Desserts", "price": 90 },
-  { "code": "D305", "name": "Fruit Salad", "category": "Desserts", "price": 80 },
-  { "code": "D306", "name": "Kulfi(Malai/Pista)", "category": "Desserts", "price": 70 },
-  { "code": "D307", "name": "Moong Dal Halwa", "category": "Desserts", "price": 90 },
-  { "code": "D308", "name": "Rasmalai", "category": "Desserts", "price": 80 },
-  { "code": "D309", "name": "Chocolate Lava Cake", "category": "Desserts", "price": 120 },
-  { "code": "D310", "name": "Besan Ladoo", "category": "Desserts", "price": 70 },
-  { "code": "D311", "name": "Ice-Cream Sundae", "category": "Desserts", "price": 110 },
-  { "code": "D312", "name": "Mango Phirni", "category": "Desserts", "price": 90 },
-
-  { "code": "V401", "name": "Masala Chai", "category": "Beverages", "price": 30 },
-  { "code": "V402", "name": "Cold Coffee", "category": "Beverages", "price": 60 },
-  { "code": "V403", "name": "Fresh Lime Soda", "category": "Beverages", "price": 50 },
-  { "code": "V404", "name": "Mineral Water", "category": "Beverages", "price": 20 },
-  { "code": "V405", "name": "Sweet Lassi", "category": "Beverages", "price": 40 },
-  { "code": "V406", "name": "Mango Lassi", "category": "Beverages", "price": 60 },
-  { "code": "V407", "name": "Filter Coffee", "category": "Beverages", "price": 60 },
-  { "code": "V408", "name": "Strawberry Shake", "category": "Beverages", "price": 70 },
-  { "code": "V409", "name": "Masala Soda", "category": "Beverages", "price": 40 },
-  { "code": "V410", "name": "Iced Tea(Lemon/Mint)", "category": "Beverages", "price": 70 },
-
-  { "code": "S501", "name": "Paneer Tikka", "category": "Starters", "price": 150 },
-  { "code": "S502", "name": "Corn Cheese Balls", "category": "Starters", "price": 130 },
-  { "code": "S503", "name": "Veg Manchurian Dry", "category": "Starters", "price": 140 },
-  { "code": "S504", "name": "Aloo Tikki Chaat", "category": "Starters", "price": 120 },
-  { "code": "S505", "name": "Tandoori Soya Chaap", "category": "Starters", "price": 160 },
-  { "code": "S506", "name": "Peri-Peri Fries", "category": "Starters", "price": 120 },
-  { "code": "S507", "name": "Veg Seekh Kabab", "category": "Starters", "price": 140 },
-  { "code": "S508", "name": "Cheese Corn Toast", "category": "Starters", "price": 110 },
-  { "code": "S509", "name": "Spinach Cheese Pockets", "category": "Starters", "price": 130 },
-  { "code": "S510", "name": "Nachos With Salsa", "category": "Starters", "price": 130 }
+    {
+        "code": "M101",
+        "name": "Paneer Butter Masala",
+        "category": "Main Course",
+        "price": 250
+    },
+    {
+        "code": "M102",
+        "name": "Dal Makhani",
+        "category": "Main Course",
+        "price": 180
+    },
+    {
+        "code": "M103",
+        "name": "Veg Biryani",
+        "category": "Main Course",
+        "price": 220
+    },
+    {
+        "code": "M104",
+        "name": "Chole Bhature",
+        "category": "Main Course",
+        "price": 160
+    },
+    {
+        "code": "M105",
+        "name": "Kadhai Mushroom",
+        "category": "Main Course",
+        "price": 240
+    },
+    {
+        "code": "M106",
+        "name": "Malai Kofta",
+        "category": "Main Course",
+        "price": 260
+    },
+    {
+        "code": "M107",
+        "name": "Kaju Curry",
+        "category": "Main Course",
+        "price": 230
+    },
+    {
+        "code": "M108",
+        "name": "Bhindi Masala",
+        "category": "Main Course",
+        "price": 170
+    },
+    {
+        "code": "M109",
+        "name": "Kadhai Paneer",
+        "category": "Main Course",
+        "price": 230
+    },
+    {
+        "code": "M110",
+        "name": "Haandi Paneer",
+        "category": "Main Course",
+        "price": 290
+    },
+    {
+        "code": "M111",
+        "name": "Rajma Chawal",
+        "category": "Main Course",
+        "price": 170
+    },
+    {
+        "code": "M112",
+        "name": "VFC Premium Special(Veg)",
+        "category": "Main Course",
+        "price": 290
+    },
+    {
+        "code": "B201",
+        "name": "Butter Naan",
+        "category": "Breads",
+        "price": 40
+    },
+    {
+        "code": "B202",
+        "name": "Garlic Naan",
+        "category": "Breads",
+        "price": 50
+    },
+    {
+        "code": "B203",
+        "name": "Tandoori Roti",
+        "category": "Breads",
+        "price": 30
+    },
+    {
+        "code": "B204",
+        "name": "Lachha Paratha",
+        "category": "Breads",
+        "price": 45
+    },
+    {
+        "code": "B205",
+        "name": "Plain Naan",
+        "category": "Breads",
+        "price": 35
+    },
+    {
+        "code": "B206",
+        "name": "Aloo Paratha",
+        "category": "Breads",
+        "price": 45
+    },
+    {
+        "code": "B207",
+        "name": "Paneer Paratha",
+        "category": "Breads",
+        "price": 55
+    },
+    {
+        "code": "B208",
+        "name": "Stuffed Kulcha (Paneer)",
+        "category": "Breads",
+        "price": 60
+    },
+    {
+        "code": "B209",
+        "name": "Bajra Roti",
+        "category": "Breads",
+        "price": 25
+    },
+    {
+        "code": "B210",
+        "name": "Naan With Stuffed Cheese",
+        "category": "Breads",
+        "price": 70
+    },
+    {
+        "code": "B211",
+        "name": "Amritsari Kulcha",
+        "category": "Breads",
+        "price": 65
+    },
+    {
+        "code": "D301",
+        "name": "Gulab Jamun",
+        "category": "Desserts",
+        "price": 60
+    },
+    {
+        "code": "D302",
+        "name": "Rasgulla",
+        "category": "Desserts",
+        "price": 55
+    },
+    {
+        "code": "D303",
+        "name": "Ice Cream (Vanilla)",
+        "category": "Desserts",
+        "price": 70
+    },
+    {
+        "code": "D304",
+        "name": "Brownie",
+        "category": "Desserts",
+        "price": 90
+    },
+    {
+        "code": "D305",
+        "name": "Fruit Salad",
+        "category": "Desserts",
+        "price": 80
+    },
+    {
+        "code": "D306",
+        "name": "Kulfi(Malai/Pista)",
+        "category": "Desserts",
+        "price": 70
+    },
+    {
+        "code": "D307",
+        "name": "Moong Dal Halwa",
+        "category": "Desserts",
+        "price": 90
+    },
+    {
+        "code": "D308",
+        "name": "Rasmalai",
+        "category": "Desserts",
+        "price": 80
+    },
+    {
+        "code": "D309",
+        "name": "Chocolate Lava Cake",
+        "category": "Desserts",
+        "price": 120
+    },
+    {
+        "code": "D310",
+        "name": "Besan Ladoo",
+        "category": "Desserts",
+        "price": 70
+    },
+    {
+        "code": "D311",
+        "name": "Ice-Cream Sundae",
+        "category": "Desserts",
+        "price": 110
+    },
+    {
+        "code": "D312",
+        "name": "Mango Phirni",
+        "category": "Desserts",
+        "price": 90
+    },
+    {
+        "code": "V401",
+        "name": "Masala Chai",
+        "category": "Beverages",
+        "price": 30
+    },
+    {
+        "code": "V402",
+        "name": "Cold Coffee",
+        "category": "Beverages",
+        "price": 60
+    },
+    {
+        "code": "V403",
+        "name": "Fresh Lime Soda",
+        "category": "Beverages",
+        "price": 50
+    },
+    {
+        "code": "V404",
+        "name": "Mineral Water",
+        "category": "Beverages",
+        "price": 20
+    },
+    {
+        "code": "V405",
+        "name": "Sweet Lassi",
+        "category": "Beverages",
+        "price": 40
+    },
+    {
+        "code": "V406",
+        "name": "Mango Lassi",
+        "category": "Beverages",
+        "price": 60
+    },
+    {
+        "code": "V407",
+        "name": "Filter Coffee",
+        "category": "Beverages",
+        "price": 60
+    },
+    {
+        "code": "V408",
+        "name": "Strawberry Shake",
+        "category": "Beverages",
+        "price": 70
+    },
+    {
+        "code": "V409",
+        "name": "Masala Soda",
+        "category": "Beverages",
+        "price": 40
+    },
+    {
+        "code": "V410",
+        "name": "Iced Tea(Lemon/Mint)",
+        "category": "Beverages",
+        "price": 70
+    },
+    {
+        "code": "S501",
+        "name": "Paneer Tikka",
+        "category": "Starters",
+        "price": 150
+    },
+    {
+        "code": "S502",
+        "name": "Corn Cheese Balls",
+        "category": "Starters",
+        "price": 130
+    },
+    {
+        "code": "S503",
+        "name": "Veg Manchurian Dry",
+        "category": "Starters",
+        "price": 140
+    },
+    {
+        "code": "S504",
+        "name": "Aloo Tikki Chaat",
+        "category": "Starters",
+        "price": 120
+    },
+    {
+        "code": "S505",
+        "name": "Tandoori Soya Chaap",
+        "category": "Starters",
+        "price": 160
+    },
+    {
+        "code": "S506",
+        "name": "Peri-Peri Fries",
+        "category": "Starters",
+        "price": 120
+    },
+    {
+        "code": "S507",
+        "name": "Veg Seekh Kabab",
+        "category": "Starters",
+        "price": 140
+    },
+    {
+        "code": "S508",
+        "name": "Cheese Corn Toast",
+        "category": "Starters",
+        "price": 110
+    },
+    {
+        "code": "S509",
+        "name": "Spinach Cheese Pockets",
+        "category": "Starters",
+        "price": 130
+    },
+    {
+        "code": "S510",
+        "name": "Nachos With Salsa",
+        "category": "Starters",
+        "price": 130
+    }
 ]

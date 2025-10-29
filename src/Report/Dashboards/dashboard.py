@@ -1,19 +1,17 @@
 from Domain.menu import Menu
-from Domain.order import Order
-from Domain.bill_gen import Bill
-from Domain.booking import Booking
+from Domain.order import OrderOps
+from Domain.booking import BookingOps
+from Domain.bill_gen import BillGenerator
+from Report.reports import ReportOps
+from Logs.logs import Logger
 
 class Dashboard:
     def __init__(self, role):
-        self.role = role.lower()
-        self.menu = Menu()
-        self.order = Order()
-        self.bill = Bill()
-        self.booking = Booking()
+        self.role = role
 
-    def run(self):
+    def show(self):
         while True:
-            print(f"\n----- {self.role.capitalize()} Dashboard -----")
+            print("\n VFC Premium Dashboard ")
             print("1. View Menu")
             print("2. Book Table")
             print("3. Place Order")
@@ -21,33 +19,77 @@ class Dashboard:
 
             if self.role == "admin":
                 print("5. Update/Cancel Order")
-                print("6. Add Menu Item")
-                print("7. Update Menu Item")
-                print("8. View Reports")
-                print("9. Logout")
+                print("6. Add/Update Menu")
+                print("7. View Reports")
+                print("8. Cancel Booking")
+                print("9. Exit")
             else:
-                print("5. Logout")
+                print("5. Cancel Booking")
+                print("6. Exit")
 
-            choice = input("Enter choice: ")
+            choice = input("Enter choice: ").strip()
 
             if choice == '1':
-                self.menu.show_menu()
+                Menu().display_menu()
             elif choice == '2':
-                self.booking.book_table()
+                BookingOps().book_table()
             elif choice == '3':
-                self.order.place_order()
+                OrderOps().place_order()
             elif choice == '4':
-                self.bill.generate_bill()
+                BillGenerator().generate_bill()
             elif choice == '5' and self.role == "admin":
-                self.order.update_or_cancel_order()
+                OrderOps().update_or_cancel_order()
             elif choice == '6' and self.role == "admin":
-                self.menu.add_item(self.role)
+                Menu().admin_menu_ops()
             elif choice == '7' and self.role == "admin":
-                self.menu.update_item(self.role)
+                self.view_reports()
             elif choice == '8' and self.role == "admin":
-                print(" Reports will be coming soon...")
-            elif (choice == '9' and self.role == "admin") or (choice == '5' and self.role == "staff"):
-                print(" Logging out...")
+                BookingOps().cancel_booking()
+            elif choice == '5' and self.role == "staff":
+                BookingOps().cancel_booking()
+            elif choice == '6' and self.role == "staff":
+                print(" Logging out of VFC Premium... ")
+                Logger.write_log("User logged out", actor=self.role)
+                break
+            elif choice == '9' and self.role == "admin":
+                print(" Logging out of VFC Premium... ")
+                Logger.write_log("User logged out", actor=self.role)
                 break
             else:
-                print(" Invalid choice.. Please try again..")
+                print(" Invalid choice. ")
+
+    def view_reports(self):
+        print("\n VFC Premium Reports ")
+        print("1. Daily Sales")
+        print("2. Daily Orders")
+        print("3. Daily Bookings")
+        print("4. Monthly Sales")
+        print("5. Monthly Orders")
+        print("6. Monthly Bookings")
+        print("7. Back")
+
+        report = ReportOps()
+        while True:
+            choice = input("Enter report choice: ").strip()
+            if choice == '1':
+                report.daily_sales()
+                Logger.write_log("Viewed daily sales", actor="admin")
+            elif choice == '2':
+                report.daily_orders()
+                Logger.write_log("Viewed daily orders", actor="admin")
+            elif choice == '3':
+                report.daily_bookings()
+                Logger.write_log("Viewed daily bookings", actor="admin")
+            elif choice == '4':
+                report.monthly_sales()
+                Logger.write_log("Viewed monthly sales", actor="admin")
+            elif choice == '5':
+                report.monthly_orders()
+                Logger.write_log("Viewed monthly orders", actor="admin")
+            elif choice == '6':
+                report.monthly_bookings()
+                Logger.write_log("Viewed monthly bookings", actor="admin")
+            elif choice == '7':
+                break
+            else:
+                print(" Invalid choice. ")

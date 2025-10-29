@@ -1,9 +1,9 @@
 class UserModel:
-    def __init__(self, email, name, mobile, experiencee, role, password):
+    def __init__(self, email, name, mobile, experience, role, password):
         self.email = email
         self.name = name
         self.mobile = mobile
-        self.experience = experiencee
+        self.experience = experience
         self.role = role
         self.password = password
 
@@ -16,15 +16,3 @@ class UserModel:
             "role": self.role,
             "password": self.password
         }
-
-    #To get the data
-    @staticmethod
-    def from_dict(data):
-        return UserModel(
-            email=data.get("email"),
-            name=data.get("name"),
-            mobile=data.get("mobile"),
-            experience=data.get("experience"),
-            role=data.get("role"),
-            password=data.get("password")
-        )

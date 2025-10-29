@@ -1,1 +1,97 @@
 all logs came here:-
+[2025-10-27 21:43:03] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-27 21:46:41] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-27 21:47:09] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-27 21:47:09] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-27 21:47:09] [STAFF] Table booked - Table: T2, Time: 22:15, Name: kanak
+[2025-10-27 21:47:36] [STAFF] Invalid item code during order - Code: S105
+[2025-10-27 21:47:36] [STAFF] Order placed - Table: T2, Items: M101
+[2025-10-27 21:48:02] [ADMIN] Viewed daily sales - 
+[2025-10-27 21:48:06] [ADMIN] Viewed daily orders - 
+[2025-10-27 21:48:13] [ADMIN] Viewed daily sales - 
+[2025-10-27 21:50:01] [ADMIN] Menu item added - Code: D101, Name: faluda
+[2025-10-28 13:06:54] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 13:08:23] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 13:08:23] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 13:08:23] [STAFF] Table booked - Table: T1, Time: 14:10, Name: yuvraj
+[2025-10-28 13:10:20] [STAFF] Order placed - Table: T1, Items: M101, M102, B201, B203, D302, V404, S503
+[2025-10-28 13:10:53] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 13:10:53] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 13:10:53] [STAFF] Table booked - Table: T2, Time: 14:10, Name: vishal
+[2025-10-28 13:11:39] [STAFF] Order placed - Table: T2, Items: S504, S503, S505
+[2025-10-28 13:12:40] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 13:12:40] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 13:12:40] [STAFF] Booking conflict - Table: T2, Time: 14:10
+[2025-10-28 13:13:04] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 13:13:04] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 13:13:04] [STAFF] Table booked - Table: T3, Time: 15:30, Name: koushal
+[2025-10-28 13:13:48] [STAFF] Order placed - Table: T3, Items: D305, B208, B207, B204
+[2025-10-28 13:14:41] [ADMIN] Viewed daily sales - 
+[2025-10-28 13:14:45] [ADMIN] Viewed daily orders - 
+[2025-10-28 13:17:17] [ADMIN] Viewed daily sales - 
+[2025-10-28 13:21:54] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 13:26:07] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 13:29:13] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 13:29:19] [ADMIN] Viewed daily sales - 
+[2025-10-28 13:29:29] [ADMIN] Viewed daily orders - 
+[2025-10-28 13:29:30] [ADMIN] Viewed daily bookings - 
+[2025-10-28 13:29:31] [ADMIN] Viewed monthly sales - 
+[2025-10-28 13:29:32] [ADMIN] Viewed monthly orders - 
+[2025-10-28 13:29:33] [ADMIN] Viewed monthly bookings - 
+[2025-10-28 13:31:00] [ADMIN] Viewed daily sales - 
+[2025-10-28 13:34:03] [ADMIN] Viewed daily orders - 
+[2025-10-28 13:34:06] [ADMIN] Viewed daily bookings - 
+[2025-10-28 13:34:08] [ADMIN] Viewed monthly sales - 
+[2025-10-28 13:34:10] [ADMIN] Viewed monthly orders - 
+[2025-10-28 13:34:12] [ADMIN] Viewed monthly bookings - 
+[2025-10-28 13:38:01] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 13:39:12] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 13:39:12] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 13:39:12] [STAFF] Table booked - Table: T1, Time: 16:00, Name: aditya
+[2025-10-28 13:40:12] [STAFF] Order placed - Table: T1, Items: M101, M102, B205, B206
+[2025-10-28 14:31:12] [STAFF] Staff signed up - Email: kaushu234@gmail.com
+[2025-10-28 14:31:41] [STAFF] Sign-in failed - Email: kaushu234@gmail.com
+[2025-10-28 14:32:20] [STAFF] Staff signed in - Email: kaushu234@gmail.com
+[2025-10-28 14:32:57] [STAFF] Invalid booking time - Time: 23:50
+[2025-10-28 14:33:26] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK04E3AD', 'name': 'koushal', 'email': 'komal121@gmail.com', 'mobile': '8756837576', 'date': '2025-10-23', 'time': '13:26', 'guests': 10, 'table_no': 'T1', 'status': 'Confirmed'}
+[2025-10-28 14:33:26] [SYSTEM] Skipped invalid booking entry - {'booking_id': 'BK9D7752', 'name': 'vishal', 'email': 'vishal@321gmail.com', 'mobile': '8696861016', 'date': '2025-10-23', 'time': '15:00', 'guests': 4, 'table_no': 'T2', 'status': 'Confirmed'}
+[2025-10-28 14:33:26] [STAFF] Table booked - Table: T1, Time: 14:00, Name: 14:00
+[2025-10-28 14:33:56] [STAFF] Booking cancelled - Table: T1, Time: 14:00
+[2025-10-28 14:34:19] [STAFF] User logged out - 
+[2025-10-28 17:44:25] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 17:49:05] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 17:56:21] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:00:36] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:05:27] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:25:45] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:26:37] [STAFF] Table booked - Table: T5, Time: 13:30, Date: 2025-10-29, Name: viren
+[2025-10-28 18:27:05] [STAFF] Order placed - Table: T5, Items: M101, M102
+[2025-10-28 18:32:36] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:33:50] [STAFF] Table booked - Table: T6, Time: 15:00, Date: 2025-10-29, Name: aakash
+[2025-10-28 18:40:19] [ADMIN] Admin signed in - Email: admin@vfcpremium.com
+[2025-10-28 18:46:18] [STAFF] Table booked - Table: T4, Time: 19:00, Date: 2025-10-28, Name: manvendra
+[2025-10-28 18:46:49] [STAFF] Invalid item code during order - Code: D403
+[2025-10-28 18:46:49] [STAFF] Order placed - Table: T4, Items: M101, S501
+[2025-10-28 18:47:13] [ADMIN] User logged out - 
+[2025-10-28 18:49:05] [ADMIN] Admin signed in — Email: admin@vfcpremium.com
+[2025-10-28 18:49:10] [STAFF] Bill generated — BILL013 | Table: T4 | Total: ₹420.0
+[2025-10-28 18:49:43] [ADMIN] User logged out — 
+[2025-10-29 08:21:30] [ADMIN] Admin signed in — Email: admin@vfcpremium.com
+[2025-10-29 08:22:05] [STAFF] Table booked — Table: T1, Time: 10:00, Date: 2025-10-29, Name: harsh
+[2025-10-29 08:22:24] [ADMIN] Viewed daily sales — 
+[2025-10-29 08:22:26] [ADMIN] Viewed daily orders — 
+[2025-10-29 08:22:28] [ADMIN] Viewed daily bookings — 
+[2025-10-29 08:22:30] [ADMIN] Viewed monthly sales — 
+[2025-10-29 08:22:33] [ADMIN] Viewed monthly orders — 
+[2025-10-29 08:22:35] [ADMIN] Viewed monthly bookings — 
+[2025-10-29 08:24:51] [ADMIN] Viewed monthly sales — 
+[2025-10-29 08:24:52] [ADMIN] Viewed monthly orders — 
+[2025-10-29 08:24:53] [ADMIN] Viewed monthly bookings — 
+[2025-10-29 08:24:59] [ADMIN] User logged out — 
+[2025-10-29 08:26:01] [ADMIN] Admin signed in — Email: admin@vfcpremium.com
+[2025-10-29 08:26:07] [ADMIN] Viewed monthly sales — 
+[2025-10-29 08:26:10] [ADMIN] Viewed monthly sales — 
+[2025-10-29 08:26:11] [ADMIN] Viewed monthly orders — 
+[2025-10-29 08:26:12] [ADMIN] Viewed monthly bookings — 
+[2025-10-29 08:26:23] [ADMIN] Viewed daily sales — 
+[2025-10-29 08:26:30] [ADMIN] Viewed daily bookings — 
